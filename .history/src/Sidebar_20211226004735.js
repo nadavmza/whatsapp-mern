@@ -26,7 +26,7 @@ const Sidebar = () => {
       </div>
       <div className="sidebar__search">
         <div className="sidebar__searchContainer">
-          <SearchOutlinedIcon />
+          <SearchOutlined />
           <input placeholder="Search or start new chat" type="text" />
         </div>
       </div>
