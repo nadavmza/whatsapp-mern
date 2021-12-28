@@ -1,21 +1,20 @@
 import './App.css';
-import React, { useEffect} from 'react';
 import Chat from './Chat';
 import Sidebar from './Sidebar';
 import Pusher from "pusher-js"
+import React, { useEffect} from 'react';
 
 function App() {
   useEffect(() => {
-      const pusher = new Pusher('11eff1cbbe0451f43821', {
+    const pusher = new Pusher('11eff1cbbe0451f43821', {
       cluster: 'ap2'
     });
-
-    const channel = pusher.subscribe('messages');
-    channel.bind('inserted', (data)=> {
-      alert(JSON.stringify(data));
-    });
+      const channel = pusher.subscribe('messages');
+      channel.bind('', (data)=> {
+        alert(JSON.stringify(data));
+      });
     
-  }, []);
+  }, [])
   return (
     
     <div className="app">

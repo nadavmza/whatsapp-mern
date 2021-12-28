@@ -5,17 +5,17 @@ import Sidebar from './Sidebar';
 import Pusher from "pusher-js"
 
 function App() {
-  useEffect(() => {
-      const pusher = new Pusher('11eff1cbbe0451f43821', {
-      cluster: 'ap2'
-    });
+  // useEffect(() => {
+  //     const pusher = new Pusher('11eff1cbbe0451f43821', {
+  //     cluster: 'ap2'
+  //   });
 
-    const channel = pusher.subscribe('messages');
-    channel.bind('inserted', (data)=> {
-      alert(JSON.stringify(data));
-    });
+  //   const channel = pusher.subscribe('messages');
+  //   channel.bind('inserted', (data)=> {
+  //     alert(JSON.stringify(data));
+  //   });
     
-  }, []);
+  // }, []);
   return (
     
     <div className="app">

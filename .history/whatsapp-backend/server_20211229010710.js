@@ -3,6 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import Messages from "./dbMessages.js";
 import Pusher from "pusher";
+import cors from 'cors';
 // importing
 
 
@@ -18,7 +19,10 @@ const pusher = new Pusher({
     useTLS: true
   });
 //middleware
-app.use(express.json())
+app.use(express.json());
+app.use(cors())
+
+
 
 //DB config
 const connection_url='mongodb+srv://admin:T0XbedbMkVBNWrBQ@cluster0.owkc8.mongodb.net/whatsappdb?retryWrites=true&w=majority';
@@ -33,26 +37,26 @@ db.once('open',()=>{
     const msgCollection =db.collection('messagecontents')
     const changeStream= msgCollection.watch();
 
-    changeStream.on('change',(change)=>{
-        console.log(change)
+    changeStream.on("change",(change)=>{
+        console.log("a change occured",change);
+
+
+        if(change.operationType === 'insert'){
+            const messageDetails=change.fullDocument;
+            pusher.trigger('messages','inserted',
+            {
+                name:messageDetails.name,
+                message:messageDetails.message
+            }
+            
+            );
+        } else{
+            console.log('Eror trigerring pusher')
+        }
     
 
-    if(change.operationType ==='insert'){
-        const messageDetails = change.fullDocument;
-        pusher.trigger('messages,inserted',
-        {
-            name: messageDetails.name,
-            message: messageDetails.message
-        }
-        
-        )
-    }
-
-
-
-
- });
-
+    
+    });
 });
 
 
