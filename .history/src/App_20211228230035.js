@@ -4,16 +4,7 @@ import Sidebar from './Sidebar';
 import React from "react";
 
 function App() {
-  useEffect(() => {
-    const pusher = new Pusher('11eff1cbbe0451f43821', {
-      cluster: 'ap2'
-    });
-      const channel = pusher.subscribe('messages');
-      channel.bind('my-event', function(data) {
-        alert(JSON.stringify(data));
-      });
-    
-  }, [])
+  use
   return (
     
     <div className="app">
