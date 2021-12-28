@@ -1,8 +1,8 @@
 import './App.css';
 import Chat from './Chat';
 import Sidebar from './Sidebar';
+import React from "react";
 import Pusher from "pusher-js"
-import React, { useEffect} from 'react';
 
 function App() {
   useEffect(() => {
