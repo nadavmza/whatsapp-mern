@@ -8,9 +8,10 @@ import axios from './axios';
 function App() {
   const[messages,setMessages]=useState([]);
   useEffect(()=>{
-    axios.get('/messages/sync')
+    axios.get('http://localhost:9000/messages/sync')
     .then(response=>{
-       setMessages(response.data);
+      // setMessages(response.data);
+      console.log(response.data);
     });
   },[]);
 
