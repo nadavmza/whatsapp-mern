@@ -3,24 +3,15 @@ import { Avatar, IconButton } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
 import MicIcon from '@mui/icons-material/Mic';
-import React, { useState } from 'react'
-import axios from "./axios"
+import React from 'react'
+import
 import './Chat.css';
 
-function Chat({ messages }) {
+function Chat({messages}) {
 const [input,setInput] = useState("");
 
-const sendMessage= async (e)=>{
+const sendMessage= (e)=>{
     e.preventDefault();
-
-    await axios.post('/messages/new', {
-        message:input,
-        name:" Demo app",
-        timestamp:"just now",
-        received:false    
-    });
-
-    setInput('');
     
 }
     return (

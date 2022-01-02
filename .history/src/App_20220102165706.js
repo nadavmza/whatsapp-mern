@@ -2,7 +2,7 @@ import './App.css';
 import React, { useEffect, useState} from 'react';
 import Chat from './Chat';
 import Sidebar from './Sidebar';
-import Pusher from 'pusher-js';
+import Pusher from "pusher-js"
 import axios from './axios';
 
 function App() {
@@ -20,25 +20,21 @@ function App() {
   useEffect(() => {
       const pusher = new Pusher('11eff1cbbe0451f43821', {
       cluster: 'ap2'
+      setMessages({...messages,newmessages)
     });
 
     const channel = pusher.subscribe('messages');
-    channel.bind('inserted', (newMessage) => {
-      setMessages([...messages,newMessage])
-
+    channel.bind('inserted', (data)=> {
+      alert(JSON.stringify(data));
     });
-    return () =>{
-      channel.unbind_all();
-      channel.unsubscribe();
-    };
-
-  }, [messages]);
+    
+  }, []);
   return (
     
     <div className="app">
       <div className="app_body">
         <Sidebar/>
-         <Chat messages={messages}/>
+         <Chat/>
       </div>
     </div>
   );

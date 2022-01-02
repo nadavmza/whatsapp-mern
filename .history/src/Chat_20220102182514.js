@@ -7,7 +7,7 @@ import React, { useState } from 'react'
 import axios from "./axios"
 import './Chat.css';
 
-function Chat({ messages }) {
+function Chat({messages}) {
 const [input,setInput] = useState("");
 
 const sendMessage= async (e)=>{

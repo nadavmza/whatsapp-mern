@@ -2,7 +2,7 @@ import './App.css';
 import React, { useEffect, useState} from 'react';
 import Chat from './Chat';
 import Sidebar from './Sidebar';
-import Pusher from 'pusher-js';
+import Pusher from "pusher-js"
 import axios from './axios';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   useEffect(()=>{
     axios.get('/messages/sync')
     .then(response=>{
-       setMessages(response.data);
+       setMessages({response.data);
     });
   },[]);
 
@@ -23,15 +23,14 @@ function App() {
     });
 
     const channel = pusher.subscribe('messages');
-    channel.bind('inserted', (newMessage) => {
-      setMessages([...messages,newMessage])
+    channel.bind('inserted', (newMessage)=> {
+      setMessages({...messages,newMessage})
 
     });
     return () =>{
       channel.unbind_all();
       channel.unsubscribe();
     };
-
   }, [messages]);
   return (
     
