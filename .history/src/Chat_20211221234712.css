@@ -1,9 +1,0 @@
-.chat{
-    display:flex;
-    flex-direction:column;
-    flex:0.65;
-
-    flex:0.65 means that Chat component take 65
-
-
-}

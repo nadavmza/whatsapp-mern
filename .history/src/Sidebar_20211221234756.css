@@ -1,9 +1,0 @@
-.sidebar{
-    display:flex;
-    flex-direction: column;
-    flex:0.35;
-
-
-    /* flex:0.35 means that Chat component take 35 precent 
-    of the screen */
-}
