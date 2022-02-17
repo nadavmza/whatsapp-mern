@@ -1,7 +1,6 @@
 import { AttachFile, InsertEmoticon, SearchOutlined } from '@mui/icons-material';
 import { Avatar, IconButton } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
 import MicIcon from '@mui/icons-material/Mic';
 import React, { useState } from 'react'
 import axios from "../whatsapp-frontend/src/axios"
@@ -60,7 +59,7 @@ const sendMessage= async (e)=>{
             </div>
             
             <div className="chat_footer">
-                    <InsertEmoticonIcon/>
+                    <InsertEmoticon/>
             <form>
                 <input value ={input} onChange={e =>setInput(e.target.value)} placeholder="Type a message"
                 type="text"/>
