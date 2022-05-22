@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useEffect, useState} from 'react';
-import Chat from './Chat';
-import Sidebar from './Sidebar';
+import Chat from './components/Chat';
+import Sidebar from './components/Sidebar';
 import Pusher from 'pusher-js';
 import axios from './axios';
 

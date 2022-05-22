@@ -3,7 +3,7 @@ import { Avatar, IconButton } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import MicIcon from '@mui/icons-material/Mic';
 import React, { useState } from 'react'
-import axios from "../whatsapp-frontend/src/axios"
+import axios from '../axios.js'
 import './Chat.css';
 
 function Chat({ messages }) {
