@@ -3,6 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import Messages from "./dbMessages.js";
 import Pusher from "pusher";
+import path from 'path';
 //  import cors from 'cors';
 // importing
 
@@ -10,7 +11,6 @@ import Pusher from "pusher";
 //app config
 const app =express();
 const port=process.env.PORT || 9000;
-const path =require('path');
 
 if(process.env.NODE_ENV === 'production')
 {
