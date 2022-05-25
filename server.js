@@ -1,16 +1,24 @@
 
 import express from 'express';
 import mongoose from 'mongoose';
-import Messages from "./dbMessages.js";
+import Messages from "/dbMessages.js";
 import Pusher from "pusher";
-import cors from 'cors';
+//  import cors from 'cors';
 // importing
 
 
 //app config
 const app =express();
 const port=process.env.PORT || 9000;
+const path =require('path');
 
+if(process.env.NODE_ENV === 'production')
+{
+    app.use(express.static('whatsapp-frontend/buid'))
+    app.get('*',(req, res) => {
+        res.sendFile(path.resolve(_dirname,'whatsapp-frontend','build','index.html'))
+    })
+}
 const pusher = new Pusher({
     appId: "1322521",
     key: "11eff1cbbe0451f43821",
@@ -20,7 +28,7 @@ const pusher = new Pusher({
   });
 //middleware
 app.use(express.json());
-app.use(cors())
+//  app.use(cors())
 
 
 
