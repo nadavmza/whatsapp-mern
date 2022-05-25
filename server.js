@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import Messages from "./dbMessages.js";
 import Pusher from "pusher";
 import path from 'path';
-//  import cors from 'cors';
+import cors from 'cors';
 // importing
 
 
@@ -28,7 +28,7 @@ const pusher = new Pusher({
   });
 //middleware
 app.use(express.json());
-//  app.use(cors())
+  app.use(cors())
 
 
 
